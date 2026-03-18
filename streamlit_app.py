@@ -162,13 +162,7 @@ if run_btn:
             else:
                 st.caption("ROT hours column not found in output, so minor job metrics are not available.")
 
-            st.markdown("### Final Result")
-            colA, colB = st.columns(2)
-            with colA:
-                st.metric("Average TAT (no manual check required)", f"{avg_ok:.2f} hrs" if avg_ok is not None else "N/A")
-            with colB:
-                st.metric("Average TAT (all records with TAT)", f"{avg_all:.2f} hrs" if avg_all is not None else "N/A")
-
+           
             st.markdown("### Charts")
             st.image(result_paths["chart_no_manual"], caption="TAT buckets (No manual check required)", use_container_width=True)
             st.image(result_paths["chart_all_tat"], caption="TAT buckets (All records with TAT)", use_container_width=True)
